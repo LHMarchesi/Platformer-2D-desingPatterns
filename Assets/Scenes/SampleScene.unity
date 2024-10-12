@@ -387,6 +387,52 @@ Transform:
   - {fileID: 102351094}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &407022025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 407022026}
+  - component: {fileID: 407022027}
+  m_Layer: 0
+  m_Name: 'SmallBulletFactory '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &407022026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407022025}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1042532960}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &407022027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407022025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1a1004b7f0e1f4eb1d79f260e248bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productName: SmallBullet
+  bullet: {fileID: 8354694669399033708, guid: dfdca66734d65db4680a08f8eb6f4aee, type: 3}
 --- !u!1 &481692762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,6 +1457,7 @@ Transform:
   m_Children:
   - {fileID: 2128914439}
   - {fileID: 1101595239}
+  - {fileID: 407022026}
   m_Father: {fileID: 606218252}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1042532961
@@ -1427,6 +1474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletFactory:
   - {fileID: 1101595240}
+  - {fileID: 407022027}
   BulletSpawnPos: {fileID: 2128914439}
 --- !u!50 &1042532962
 Rigidbody2D:

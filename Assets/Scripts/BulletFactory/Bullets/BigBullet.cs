@@ -29,5 +29,4 @@ public class BigBullet : Bullet
     {
         Destroy(gameObject);
     }
-
 }

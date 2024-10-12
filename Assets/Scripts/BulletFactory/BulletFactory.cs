@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BigBulletFactory : AbstractFactory
+public class BulletFactory : AbstractFactory
 {
     [SerializeField] Bullet bullet;
 
