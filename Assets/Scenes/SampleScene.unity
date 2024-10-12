@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 60992671}
   - component: {fileID: 60992670}
   - component: {fileID: 60992669}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 187786781}
   - component: {fileID: 187786780}
   - component: {fileID: 187786779}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 321992997}
   - component: {fileID: 321992996}
   - component: {fileID: 321992995}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 393308275}
   - component: {fileID: 393308274}
   - component: {fileID: 393308273}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 455173215}
   - component: {fileID: 455173214}
   - component: {fileID: 455173213}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -888,6 +888,8 @@ GameObject:
   - component: {fileID: 481692764}
   - component: {fileID: 481692763}
   - component: {fileID: 481692768}
+  - component: {fileID: 481692770}
+  - component: {fileID: 481692769}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1055,6 +1057,38 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &481692769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481692762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb135ffed4dc9440977026ce0a21a67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  left: 97
+  right: 100
+  jump: 32
+--- !u!114 &481692770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481692762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 375e7fd3dd6e8fb44915caad4baaa2bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpHeight: 6
+  speed: 7
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,7 +1546,7 @@ GameObject:
   - component: {fileID: 1478788211}
   - component: {fileID: 1478788210}
   - component: {fileID: 1478788209}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1642,7 +1676,7 @@ GameObject:
   - component: {fileID: 1809768519}
   - component: {fileID: 1809768518}
   - component: {fileID: 1809768517}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1906,7 +1940,7 @@ GameObject:
   - component: {fileID: 2024539803}
   - component: {fileID: 2024539802}
   - component: {fileID: 2024539801}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
