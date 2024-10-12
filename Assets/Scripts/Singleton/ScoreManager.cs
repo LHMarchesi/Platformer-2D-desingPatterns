@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class ScoreManager : MonoBehaviour
 
     private int score;
     public int Score { get => score; set => score = value; }
+
+    [SerializeField]private TextMeshProUGUI scoreTxt;
 
     private void Awake()
     {
@@ -26,6 +29,6 @@ public class ScoreManager : MonoBehaviour
     public void AddOne()
     {
         score++;
-        Debug.Log("Score actual: " + Score);
+        scoreTxt.text = "Coin: " + score.ToString();
     }
 }
