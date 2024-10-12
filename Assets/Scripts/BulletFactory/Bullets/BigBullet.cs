@@ -14,21 +14,20 @@ public class BigBullet : Bullet
 
     public override void Initialize()
     {
-        Debug.Log("Instancia BigBullet");
-        Destroy(this, 5f);
+        Destroy(gameObject, 5f);
     }
 
     private void Update()
     {
         if (TogleDireccion)
-        {
             transform.Translate(Vector2.left * Speed * Time.deltaTime);
-        }
         else
-        {
             transform.Translate(Vector2.right * Speed * Time.deltaTime);
+    }
 
-        }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
     }
 
 }

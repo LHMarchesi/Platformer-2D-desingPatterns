@@ -7,13 +7,14 @@ using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour
 {
     [Tooltip("Max height to jump")]
-    [SerializeField] private float jumpHeight = 1.25f;
+    [SerializeField] private float jumpHeight;
     [Tooltip("Horizontal speed")]
-    [SerializeField] private float speed = 10f;
+    [SerializeField] private float speed;
     [Tooltip("Collision layer")]
     [SerializeField] private LayerMask groundLayer;
 
     public float Speed { get => speed; set => speed = value; }
+    
     public bool IsGrounded => isGrounded;
     public Rigidbody2D CharacterRb => characterRb;
     public Animator Animator => animator;
