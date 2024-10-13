@@ -12,15 +12,14 @@ public class PlayerActions : MonoBehaviour
         playerController = GetComponent<PlayerController>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Bullet"))
+        if (collision.collider.CompareTag("Bullet"))
         {
-            Bullet bullet = collision.GetComponent<Bullet>();
+            Bullet bullet = collision.gameObject.GetComponent<Bullet>();
             GetDamage(bullet.damage);
         }
     }
-
     private void GetDamage(int damage)
     {
         GameManager.Instance.Hp -= damage;

@@ -14,7 +14,7 @@ public class BigBullet : Bullet
 
     public override void Initialize()
     {
-        Destroy(gameObject, 5f);
+
     }
 
     private void Update()
@@ -25,7 +25,7 @@ public class BigBullet : Bullet
             transform.Translate(Vector2.right * Speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
     }

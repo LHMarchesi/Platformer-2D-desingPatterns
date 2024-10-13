@@ -14,7 +14,7 @@ public class SmallBullet : Bullet
 
     public override void Initialize()
     {
-        Destroy(this, 5f);
+        
     }
 
     private void Update()
@@ -24,7 +24,7 @@ public class SmallBullet : Bullet
         else
             transform.Translate(Vector2.right * Speed * Time.deltaTime);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
     }
