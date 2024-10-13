@@ -26,6 +26,9 @@ public class SmallBullet : Bullet
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        if (!collision.collider.CompareTag("Bullet"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

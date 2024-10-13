@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletName: Small bullet
-  Damage: 2
-  Speed: 8
+  Damage: 1
+  Speed: 7
   TogleDireccion: 1
 --- !u!58 &-742597365523117883
 CircleCollider2D:

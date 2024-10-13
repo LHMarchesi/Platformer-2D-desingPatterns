@@ -24,7 +24,7 @@ public class PlayerActions : MonoBehaviour
     {
         GameManager.Instance.Hp -= damage;
         GameManager.Instance.UpdateHP();
-        if (GameManager.Instance.Hp <= 10)
+        if (GameManager.Instance.Hp <= 3)
         {
             OnLowHp?.Invoke(); 
         }

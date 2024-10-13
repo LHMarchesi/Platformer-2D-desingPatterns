@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletName: BigBullet
-  Damage: 10
+  Damage: 1
   Speed: 5
   TogleDireccion: 1
 --- !u!58 &6951277152095552063
