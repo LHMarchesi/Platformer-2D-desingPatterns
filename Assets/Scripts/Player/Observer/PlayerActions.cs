@@ -22,13 +22,11 @@ public class PlayerActions : MonoBehaviour
     }
     private void GetDamage(int damage)
     {
-        GameManager.Instance.Hp -= damage;
-        GameManager.Instance.UpdateHP();
-        if (GameManager.Instance.Hp <= 3)
+        GameManager.Instance.Health -= damage;
+        GameManager.Instance.UpdateTxt();
+        if (GameManager.Instance.Health <= 3)
         {
             OnLowHp?.Invoke(); 
         }
     }
-
-
 }

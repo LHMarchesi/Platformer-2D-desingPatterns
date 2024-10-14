@@ -33,6 +33,10 @@ public class PlayerInput : MonoBehaviour
         {
             xInput++;
         }
+        if (Input.GetKey(KeyCode.R))
+        {
+            GameManager.Instance.LoadGame();
+        }
 
         inputVector = new Vector2(xInput, yInput);
 

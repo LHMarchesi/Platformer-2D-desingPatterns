@@ -52,6 +52,11 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
     }
 
+    public void ResetPosition(Vector2 positon)
+    {
+        gameObject.transform.position = positon;
+    }
+
     private void HandleMovement()
     {
         Vector2 inputVector = playerInput.InputVector;
