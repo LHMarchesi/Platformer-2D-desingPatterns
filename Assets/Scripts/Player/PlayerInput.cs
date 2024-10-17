@@ -35,7 +35,7 @@ public class PlayerInput : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.R))
         {
-            GameManager.Instance.LoadGame();
+            GameManager.Instance.LoadSavedGame();
         }
 
         inputVector = new Vector2(xInput, yInput);

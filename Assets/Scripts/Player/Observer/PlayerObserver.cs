@@ -3,25 +3,30 @@ using UnityEngine;
 
 public class PlayerObserver : MonoBehaviour
 {
-    [SerializeField] private GameObject OnLowHp_img;
-
     private void Awake()
     {
-        OnLowHp_img.SetActive(false);
     }
     void Start()
     {
         PlayerActions.OnLowHp += LowHpSecuence;
+        PlayerActions.OnDead += ReLoad;
     }
 
     void OnDisable()
     {
         PlayerActions.OnLowHp -= LowHpSecuence;
+        PlayerActions.OnDead -= ReLoad;
     }
 
-    public void LowHpSecuence()
+    private void LowHpSecuence()
     {
-        OnLowHp_img.SetActive(true);
+        UiManag.Instance.ShowLowHealthScreen(true);
+    }
+
+    private void ReLoad()
+    {
+        UiManag.Instance.ShowLowHealthScreen(false);
+        GameManager.Instance.LoadSavedGame();
     }
 }
 

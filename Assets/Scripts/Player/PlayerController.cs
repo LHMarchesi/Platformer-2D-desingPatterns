@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleJump()
     {
-        // Comprueba si hay colision con layer
+        // Check collision with layer
         Vector2 boxPosition = new Vector2(transform.position.x, transform.position.y - 1f);
         Vector2 boxSize = new Vector2(1f, 0.1f);
 
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
             if (playerInput.IsJumping)
             {
                 characterRb.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
-                playerInput.IsJumping = false; // Evitar el salto continuo
+                playerInput.IsJumping = false; // Avoid continuous jumping
             }
         }
     }

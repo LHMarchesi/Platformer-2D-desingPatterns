@@ -4,13 +4,7 @@ using System;
 public class PlayerActions : MonoBehaviour
 {
     public static event Action OnLowHp;
-    //public static event Action OnDead;
-    PlayerController playerController;
-
-    private void Awake()
-    {
-        playerController = GetComponent<PlayerController>();
-    }
+    public static event Action OnDead;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -20,13 +14,18 @@ public class PlayerActions : MonoBehaviour
             GetDamage(bullet.damage);
         }
     }
-    private void GetDamage(int damage)
+    private void GetDamage(int damage)  
     {
-        GameManager.Instance.Health -= damage;
-        GameManager.Instance.UpdateTxt();
+        GameManager.Instance.Health -= damage; // void setHealth ?
+        UiManag.Instance.UpdateTxt();
+
         if (GameManager.Instance.Health <= 3)
         {
-            OnLowHp?.Invoke(); 
+            OnLowHp?.Invoke();
+        }
+        if (GameManager.Instance.Health <= 0)
+        {
+            OnDead?.Invoke();
         }
     }
 }

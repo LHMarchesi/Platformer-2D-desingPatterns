@@ -13,6 +13,5 @@ public class PlayerData
         savedPosition = position;
         playerHealth = health;
         playerScore = score;
-        
     }
 }

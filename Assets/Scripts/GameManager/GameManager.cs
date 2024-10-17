@@ -16,15 +16,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerController playerController;
     [SerializeField] private int health;
 
-    [Tooltip("Textos UI")]
-
-    [SerializeField] private TextMeshProUGUI scoreTxt;
-    [SerializeField] private TextMeshProUGUI hpTxt;
-
     private PlayerData playerData;
-    private int score;
+    private int coins;
     public int Health { get => health; set => health = value; }
-    public int Score { get => score; set => score = value; }
+    public int Coins { get => coins; set => coins = value; }
 
 
     private void Awake()
@@ -33,8 +28,6 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(Instance);
-
-           
         }
         else
         {
@@ -42,9 +35,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LoadGame()
+    public void LoadSavedGame()
     {
-        UpdateTxt();
+        UiManag.Instance.UpdateTxt();
         if (playerData != null)
         {
             LoadPlayerData(playerData);
@@ -59,7 +52,7 @@ public class GameManager : MonoBehaviour
     private PlayerData SavePlayerData()
     {
         playerController = FindAnyObjectByType<PlayerController>();
-        return new PlayerData(Health, Score, playerController.transform.position);
+        return new PlayerData(Health, Coins, playerController.transform.position);
     }
 
     private void LoadPlayerData(PlayerData playerData)
@@ -67,19 +60,13 @@ public class GameManager : MonoBehaviour
         playerController = FindAnyObjectByType<PlayerController>();
 
         health = playerData.playerHealth;
-        score = playerData.playerScore;
+        coins = playerData.playerScore;
         playerController.ResetPosition(playerData.savedPosition);
     }
 
     public void AddOneCoin()
     {
-        score++;
-        scoreTxt.text = "Coin: " + score.ToString();
-    }
-
-    public void UpdateTxt()
-    {
-        hpTxt.text = $"Score:{health}";
-        scoreTxt.text = $"Score:{score}";
+        coins++;
+        UiManag.Instance.UpdateTxt();
     }
 }
