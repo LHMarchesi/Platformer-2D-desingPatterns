@@ -33,30 +33,39 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(Instance);
-            playerData = SavePlayerData();
+
+           
         }
         else
         {
             Destroy(gameObject);
         }
     }
-   
+
     public void LoadGame()
     {
+        UpdateTxt();
         if (playerData != null)
         {
             LoadPlayerData(playerData);
-            UpdateTxt();
         }
     }
 
-    public PlayerData SavePlayerData()
+    public void SaveGame()
     {
-        return new PlayerData(Health, Score, playerController.gameObject.transform.position);
+        playerData = SavePlayerData();
+    }
+
+    private PlayerData SavePlayerData()
+    {
+        playerController = FindAnyObjectByType<PlayerController>();
+        return new PlayerData(Health, Score, playerController.transform.position);
     }
 
     private void LoadPlayerData(PlayerData playerData)
     {
+        playerController = FindAnyObjectByType<PlayerController>();
+
         health = playerData.playerHealth;
         score = playerData.playerScore;
         playerController.ResetPosition(playerData.savedPosition);

@@ -16,7 +16,7 @@ public class SpawnPoint : MonoBehaviour
     {
         if (!saved && collision.CompareTag("Player"))
         {
-            GameManager.Instance.SavePlayerData();
+            GameManager.Instance.SaveGame();
             sprite.color = Color.cyan;
             saved = true;
         }
