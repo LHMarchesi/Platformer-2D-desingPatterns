@@ -50,6 +50,15 @@ public class PlayerController : MonoBehaviour
     {
         HandleJump();
         HandleMovement();
+        HandleAttack();
+    }
+
+    private void HandleAttack()
+    {
+        if (playerInput.IsAttacking)
+        {
+            stateMachine.TransitionTo(stateMachine.attackingState);
+        }
     }
 
     public void ResetPosition(Vector2 positon)

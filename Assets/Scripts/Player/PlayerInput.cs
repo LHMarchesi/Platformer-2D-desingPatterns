@@ -8,13 +8,16 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private KeyCode left = KeyCode.A;
     [SerializeField] private KeyCode right = KeyCode.D;
     [SerializeField] private KeyCode jump = KeyCode.Space;
+    [SerializeField] private KeyCode attack = KeyCode.P;
 
     private Vector2 inputVector;
     public Vector2 InputVector => inputVector;
 
     public bool IsJumping { get => isJumping; set => isJumping = value; }
+    public bool IsAttacking { get => isAttacking; set => isAttacking = value; }
 
     private bool isJumping;
+    private bool isAttacking;
 
     private float xInput;
     private float yInput;
@@ -41,6 +44,7 @@ public class PlayerInput : MonoBehaviour
         inputVector = new Vector2(xInput, yInput);
 
         isJumping = Input.GetKeyDown(jump);
+        isAttacking = Input.GetKeyDown(attack);
     }
 
     void Update()

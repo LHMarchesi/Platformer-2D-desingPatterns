@@ -12,13 +12,14 @@ public class StateMachine
     public WalkState walkState;
     public IdleState idleState;
     public JumpingState jumpingState;
+    public AttackingState attackingState;
 
     public StateMachine(PlayerController playerController)
     {
         walkState = new WalkState(playerController);
         idleState = new IdleState(playerController);
         jumpingState = new JumpingState(playerController);
-
+        attackingState = new AttackingState(playerController);
     }
 
     public void Initialize(IState state)
